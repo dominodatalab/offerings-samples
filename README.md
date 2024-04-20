@@ -1,4 +1,4 @@
-# Examples
+# Extending Domino
 
 
 ## Advanced Credential Propagation
@@ -7,7 +7,7 @@ Methods described below extend Domino's Capability to seamlessly achieve Credent
 by the underlying Identity Provider that the Domino workload authenticate with. Speak to your Domino CSM for more 
 details.
 
-### IRSA
+### [IRSA](./advanced-credential-propagation/irsa/README.md)
 
 IAM Role for Service Accounts ([IRSA](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html)) is a capability which allows Kubernetes Service Accounts attached to a EKS workload to assume IAM Role(s). In much the same way as you can attach and IAM Role to an EC2 instance at startup.
 
