@@ -14,7 +14,8 @@ IAM Role for Service Accounts ([IRSA](https://docs.aws.amazon.com/eks/latest/use
 The IRSA Capability follows the steps below:
 
 1. Each EKS Cluster has a unique OIDC endpoint associated with it. This endpoint is configured as an IAM identity provider
-   within an AWS Account the EKS workloads want to assume an IAM Role.
+   within ***an AWS Account*** the EKS workloads want to assume an IAM Role. They key point here is
+   that the EKS Cluster and the IAM Role need not be in the same AWS Account.IRSA.svg
 
 2. An OIDC JWT token is projected into the mounted volumes for any workload that uses any Kubernetes Service Account 
    ([Native K8s Capability](https://kubernetes.io/docs/concepts/storage/projected-volumes/))
