@@ -4,8 +4,8 @@
 ## Advanced Credential Propagation
 
 Methods described below extend Domino's Capability to seamlessly achieve Credential Propagation using the methods supported
-by the underlying Identity Provider that the Domino workload authenticate with. Speak to your Domino CSM for more 
-details.
+by the underlying Identity Provider that the Domino workload authenticate with. Speak to your Domino 
+Customer Success Manager or Account Manager for more details.
 
 ### [IRSA](./advanced-credential-propagation/irsa/README.md)
 
