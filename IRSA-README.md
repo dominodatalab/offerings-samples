@@ -2,7 +2,14 @@
 
 IAM Role for Service Accounts ([IRSA](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html)) is a capability which allows Kubernetes Service Accounts attached to a EKS workload to assume IAM Role(s). In much the same way as you can attach and IAM Role to an EC2 instance at startup.
 
-The IRSA Capability follows the steps below:
+**When should you use IRSA with Domino?**
+
+- You would like to use Credential Propagation with Scheduled Jobs in Domino
+- Your Enterprise Policy forbids the use of long lived credentials
+- You would like to use OAuth standards to propagate IAM Role to Domino Workloads
+- You would like to propagate an IAM Role to a Domino workload based on *complex and custom criteria*
+
+**The IRSA Capability follows the steps below:**
 
 1. Each EKS Cluster has a unique OIDC endpoint associated with it. This endpoint is configured as an IAM identity provider
    within ***an AWS Account*** the EKS workloads want to assume an IAM Role. They key point here is
