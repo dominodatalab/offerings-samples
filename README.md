@@ -8,3 +8,4 @@ by the underlying Identity Provider that the Domino workload authenticate with. 
 Customer Success Manager or Account Manager for more details.
 
 1. IAM ROLE for SA Mapping ([IRSA](./IRSA-README.md))
+2. ([AD User Credentials](./AD-User-README.md)) 
