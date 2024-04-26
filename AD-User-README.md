@@ -27,10 +27,15 @@ AD Authentication is an Industry standard method, using the OAuth standard to se
 
 ![AD Flow](azure-ad-user-tokens/assets/AzureADToken.png)
 
-![Demo](azure-ad-user-tokens/assets/UserDemo.mov)
+[Demo](azure-ad-user-tokens/assets/UserDemo.mov)
 
 **How do I enable this within my own Instance**
 
 For Domino versions below 5.10, contact your Domino representatives to help enable this feature
 
 For Domino 5.10+, follow our [guide](./azure-ad-user-tokens/README.md) on github
+
+
+**What about Service Accounts?**
+
+Domino supports [Azure Workload Identity](https://learn.microsoft.com/en-us/azure/aks/workload-identity-overview?tabs=dotnet) for Service Account credentials from Azure AD. Watch this space for a guide coming soon, or contact your Domino representatives to setup a demo.
