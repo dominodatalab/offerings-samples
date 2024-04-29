@@ -1,4 +1,4 @@
-### [AD User Credentials]
+### [AD User Credentials](/azure-ad-user-tokens/README.md)
 
 [Azure AD/Entra ID](https://www.microsoft.com/en-gb/security/business/identity-access/microsoft-entra-id) based authentication allows for end users to request short lived OAuth tokens from Azure, to be used for authentication to downstream services integrated with AD
 
