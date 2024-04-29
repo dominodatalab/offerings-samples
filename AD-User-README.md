@@ -1,4 +1,4 @@
-### [AD User Credentials](/azure-ad-user-tokens/README.md)
+### [AD User Credentials](/advanced-credential-propagation/azure-ad-user-tokens/README.md)
 
 [Azure AD/Entra ID](https://www.microsoft.com/en-gb/security/business/identity-access/microsoft-entra-id) based authentication allows for end users to request short lived OAuth tokens from Azure, to be used for authentication to downstream services integrated with AD
 
@@ -25,15 +25,15 @@ AD Authentication is an Industry standard method, using the OAuth standard to se
 
 6. When the consent/Offline token expires the user is again presented with the Authorisation url to provide consent.
 
-![AD Flow](azure-ad-user-tokens/assets/AzureADToken.png)
+![AD Flow](advanced-credential-propagation/azure-ad-user-tokens/assets/AzureADToken.png)
 
-[Demo](azure-ad-user-tokens/assets/UserDemo.mov)
+[Demo](advanced-credential-propagation/azure-ad-user-tokens/assets/UserDemo.mov)
 
 **How do I enable this within my own Instance**
 
 For Domino versions below 5.10, contact your Domino representatives to help enable this feature
 
-For Domino 5.10+, follow our [guide](./azure-ad-user-tokens/README.md) on github
+For Domino 5.10+, follow our [guide](./advanced-credential-propagation/azure-ad-user-tokens/README.md) on github
 
 
 **What about Service Accounts?**
