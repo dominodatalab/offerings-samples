@@ -6,7 +6,7 @@ AD Authentication is an Industry standard method, using the OAuth standard to se
 
 **Why should you use AD User Credentials?**
 
-- Your Enterprise Policy forbids the use of long lived credentials (Username/Password, Access Key, SAS token)
+- Your Enterprise Policy forbids the use of long lived credentials (Username/Password, Access Key, SAS/Database token)
 - You require strong auditing of all data reads & writes
 - You would like to use OAuth standards to propagate short lived credentials to Domino Workloads
 - Your Data source access is centrally managed via AD and you want to propogate the same access to Domino
