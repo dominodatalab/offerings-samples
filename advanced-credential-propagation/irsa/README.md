@@ -1,25 +1,26 @@
 ## Pre-requisites
 
-> Check with your Domino CSM before using this capability. It is a departure from how Domino manages
+> Check with your Domino PS Team before using this capability. It is a departure from how Domino manages
 > pod identities and may not be suitable for your requirements. 
 
-1. Install [Domsed](../domsed/README.md). It must be version `v1.3.2-release` . ***Also note that the CRD has changed so you will need to do a Helm update***
-2. For users needing to assume AWS role identities create service account per user in the `domino-compute` namespace. 
-   The name of the service account should match the user-name
+1. Install [Domsed](https://github.com/dominodatalab/domino-field-solutions-installations/tree/main/domsed). It must be version `v1.3.2-release` or higher.
+   Domsed is a Domino aware mutating webhook which allows a Domino Administrator to mutate Domino workloads 
+   based on Domino specific labels on the workload pods.
+   
 
-When we switch to domino_user_name based service account as opposed to run_id based service accounts, there are restrictions on how we define our domino user name. It must now conform to the constraint-
-
-> A lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'Example Domain ', regex used for validation is 'a-z0-9?(\.a-z0-9?)*')
-
-For example a user name test_user is allowed by Keycloak/Domino. However a K8s service account cannot be named test_user . It can only be named test-user or test.user
-
-For new customers this is not a problem. Retrofitting it for existing customers may need require us to map invalid characters (invalid for K8s SA) with a - or a .
+2. For Domino users needing to assume an AWS role, create a service account per user 
+   in the `domino-compute` namespace.  By default Domino Runtime creates a unique service account per 
+   workload pod. A Domsed mutation swaps this unique workload specific service account with
+   a domino user name specific service account. In practice it means that two workloads
+   started by the same user will have the same service account
 
 ## Installation
 
+0. As mentioned above first install [Domsed](https://github.com/dominodatalab/domino-field-solutions-installations/tree/main/domsed)
+
 1. Update the [mutation](user-identity-based-irsa.yaml) as follows:
 
-Update the environment variable mutation as appropriate to your environment
+- Update the environment variable mutation as appropriate to your environment
 
 ```yaml
   modifyEnv:
@@ -35,7 +36,12 @@ Update the environment variable mutation as appropriate to your environment
     - name: AWS_STS_REGIONAL_ENDPOINTS
       value: regional
 ```
-Next update the user to K8s service account mappings (see Pre-requisites)
+In this step we are replicating what the [Amazon EKS Pod Identity Webhook](https://github.com/aws/amazon-eks-pod-identity-webhook)
+does. Why not use the same webhook? That would require us to configure an annotation for the user
+service account. However, our intent to have non EKS based Domino data-planes avail themselves
+of IRSA, which means these data-planes will not have have this webhook running. 
+
+- Next update the user to K8s service account mappings (see Pre-requisites)
 
 ```yaml
 - cloudWorkloadIdentity:
