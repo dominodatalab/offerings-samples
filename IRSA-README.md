@@ -11,9 +11,13 @@ IAM Role for Service Accounts ([IRSA](https://docs.aws.amazon.com/eks/latest/use
 
 **How does IRSA in Domino help achieve the above goals?**
 
-When using the IRSA support in Domino, Domino workloads can assume IAM roles in any trusted AWS account.
+When using the IRSA support in Domino, any Domino workloads can assume IAM roles 
+in any AWS account.
 
-Moreover, Domino workloads running on On-Premise dataplanes as well as  dataplanes in GKE and AKS. 
+More specifically, Domino workloads running on On-Premise dataplanes as well as dataplanes in GKE and AKS can
+assume IAM roles in any AWS Account which has established trust with the OIDC provider
+associated with the Domino Dataplane.
+
 This enables use-cases like running data engineering workloads in EKS dataplane, store training datasets in S3 and download them on an on-premise Domino Training Job running on  
 an on premise GPU HW Tier. And do this without having to store long lived credentials in the 
 on premise dataplane.
