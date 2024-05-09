@@ -15,7 +15,7 @@ When using the IRSA support in Domino, any Domino hosted workloads can assume IA
 in any AWS account configured to trust the Domino Platform.
 
 More specifically, Domino workloads running on on-premise dataplanes as well as dataplanes in GKE and AKS can assume 
-IAM roles in any AWS Account which has established trust with the OIDC provider associated with the Domino Dataplane.
+IAM roles in any AWS Account which has established trust with the OIDC provider associated with the Domino dataplane.
 
 This enables use-cases like running data engineering workloads in EKS dataplane, store training datasets in S3 and 
 download them on an on-premise Domino Training Job running on an on-premise GPU HW Tier without having to store long 
