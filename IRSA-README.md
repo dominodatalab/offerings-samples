@@ -7,8 +7,8 @@ This is similar to attaching an IAM Role to an EC2 instance.
 **When should you consider using IRSA with Domino?**
 
 - Does your Enterprise Policy forbid the use of long lived credentials?
-- Would you like to use OAuth standards to propagate IAM Role to Domino Workloads? 
-- Would you would like to propagate an IAM Role to a Domino workload based on *complex and custom criteria*?
+- Would you like to transparently and securely propagate IAM Role to Domino Workloads? 
+- Would you would like do the above based on *complex and custom criteria*?
 
 **Why does IRSA with Domino help achieve the above goals?**
 
