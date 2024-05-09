@@ -24,9 +24,9 @@ lived credentials in the on-premise dataplane.
 
 **How does IRSA Work with Domino?**
 
-1. Each EKS Cluster has a unique OIDC endpoint associated with it. This endpoint is configured as an IAM identity provider
+1. Each EKS Cluster has a unique OIDC provider associated with it. This provider is configured as an IAM identity provider
    within ***an AWS Account*** the EKS workloads want to assume an IAM Role. They key point here is
-   that the EKS Cluster and the IAM Role being assumed by a workload running on EKS do not need to be in the 
+   that the EKS cluster and the IAM Role being assumed by a workload running on EKS do not need to be in the 
    same AWS Account.
 
 2. For a Pod to be able to assume an IAM Role, it must use the `STS:AssumeRoleWithWebIdentity` API
