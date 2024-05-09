@@ -9,6 +9,16 @@ IAM Role for Service Accounts ([IRSA](https://docs.aws.amazon.com/eks/latest/use
 - You would like to use OAuth standards to propagate IAM Role to Domino Workloads
 - You would like to propagate an IAM Role to a Domino workload based on *complex and custom criteria*
 
+**How does IRSA in Domino help achieve the above goals?**
+
+When using the IRSA support in Domino, Domino workloads can assume IAM roles in any trusted AWS account.
+
+Moreover, Domino workloads running on On-Premise dataplanes as well as  dataplanes in GKE and AKS. 
+This enables use-cases like running data engineering workloads in EKS dataplane, store training datasets in S3 and download them on an on-premise Domino Training Job running on  
+an on premise GPU HW Tier. And do this without having to store long lived credentials in the 
+on premise dataplane.
+
+
 **The IRSA Capability follows the steps below:**
 
 1. Each EKS Cluster has a unique OIDC endpoint associated with it. This endpoint is configured as an IAM identity provider
