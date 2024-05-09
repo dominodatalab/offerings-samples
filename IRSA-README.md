@@ -9,7 +9,7 @@ IAM Role for Service Accounts ([IRSA](https://docs.aws.amazon.com/eks/latest/use
 - You would like to use OAuth standards to propagate IAM Role to Domino Workloads
 - You would like to propagate an IAM Role to a Domino workload based on *complex and custom criteria*
 
-**How does IRSA adaptation in Domino help achieve the above goals?**
+**Why does IRSA adaptation in Domino help achieve the above goals?**
 
 When using the IRSA support in Domino, any Domino hosted workloads can assume IAM roles 
 in any AWS account configured to trust the Domino Platform.
